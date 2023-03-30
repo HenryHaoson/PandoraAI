@@ -6,8 +6,11 @@ export default defineNuxtConfig({
             apiBaseUrl: process.env.API_BASE_URL,
         },
     },
+    build:{
+        buildPath:'https://my-domain.com/chat/'
+    },
     router:{
-        base:'./'
+        base:'/chat/'
     },
     imports: {
         dirs: ['stores'],
