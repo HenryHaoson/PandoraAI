@@ -6,12 +6,19 @@ export default defineNuxtConfig({
             apiBaseUrl: process.env.API_BASE_URL,
         },
     },
-    build:{
-        buildPath:'https://my-domain.com/chat/'
-    },
     router:{
-        base:'/chat/'
+        base:'/chat'
     },
+    head: {
+        link: [
+          // static 目录中的 js 文件也需要加上前缀
+          { rel: 'stylesheet', href: '/chat' + '/js/swiper-min.css' },
+        ],
+        script: [
+          // static 目录中的 js 文件也需要加上前缀
+          { src: '/chat' + '/js/swiper-min.js', async: false, defer: true },
+        ],
+      },
     imports: {
         dirs: ['stores'],
     },
